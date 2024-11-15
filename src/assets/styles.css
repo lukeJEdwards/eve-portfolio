@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body, #app{
+    min-height: 100vh;
+}
+
+#app{
+    display: flex;
+    flex-direction: column;
+}
+
+body, a{
+    background-color: #74A769;
+    cursor: url("../assets/eye.svg"), auto;
+}
+
+body:active, a:active, a:hover{
+    cursor: url("../assets/eyeClosed.svg"), auto;
+}
