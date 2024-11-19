@@ -11,11 +11,15 @@ body, #app{
     flex-direction: column;
 }
 
-body, a{
+body{
     background-color: #74A769;
-    cursor: url("../assets/eye.svg"), auto;
 }
 
-body:active, a:active, a:hover{
-    cursor: url("../assets/eyeClosed.svg"), auto;
+@media only screen and (min-width: 768px) {
+    body, a{
+        cursor: url("../assets/eye.svg"), auto;
+    }
+    body:active, a:active, a:hover{
+        cursor: url("../assets/eyeClosed.svg"), auto;
+    }
 }

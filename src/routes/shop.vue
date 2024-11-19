@@ -7,7 +7,7 @@ definePage({
 </script>
 
 <template>
-    <div class="flex w-full flex-grow justify-center items-center">
-        <CommingSoon />
+    <div class="flex flex-grow justify-center items-center">
+        <CommingSoon class="w-full"/>
     </div>
 </template>

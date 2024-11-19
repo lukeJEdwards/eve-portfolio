@@ -8,7 +8,7 @@ definePage({
 
 <template>
     <div class="w-full flex-grow flex flex-col items-center justify-center">
-        <Eve class="w-[506px] " />
+        <Eve class="w-full" />
         <img src="../assets/index.gif" class="w-[349px]" />
     </div>
 </template>

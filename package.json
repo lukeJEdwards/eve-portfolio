@@ -12,12 +12,14 @@
   },
   "dependencies": {
     "@storyblok/vue": "^8.1.5",
+    "@vueuse/components": "^11.2.0",
     "@vueuse/core": "^11.2.0",
     "@yeger/vue-masonry-wall": "^5.0.16",
     "vue": "^3.5.12",
     "vue-router": "^4.4.5"
   },
   "devDependencies": {
+    "@iconify/vue": "^4.1.2",
     "@tsconfig/node22": "^22.0.0",
     "@types/node": "^22.9.0",
     "@vitejs/plugin-vue": "^5.1.4",
