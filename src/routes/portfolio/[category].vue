@@ -18,17 +18,17 @@ onBeforeMount(async () => {
     await initialize();
 })
 
-const images = computed(() => Object.values(categories).reduce((prev, next) => prev.concat(next), []))
+const images = computed(() => categories[route.params["category"].toString()])
 
 const { width } = useWindowSize()
-const colWidth = computed(() =>{
-    if(width.value > 1536) {
+const colWidth = computed(() => {
+    if (width.value > 1536) {
         return ((width.value - 256) - 48) / 4
-    } else if(width.value > 1024){
+    } else if (width.value > 1024) {
         return ((width.value - 96) - 32) / 3
-    } else if (width.value > 768){
+    } else if (width.value > 768) {
         return ((width.value - 64) - 16) / 2
-    }else{
+    } else {
         return (width.value - 64)
     }
 })
@@ -44,5 +44,3 @@ const colWidth = computed(() =>{
         </masonry-wall>
     </Suspense>
 </template>
-
-
