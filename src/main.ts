@@ -3,14 +3,19 @@ import "./assets/styles.css"
 import { createApp } from 'vue'
 import App from './App.vue'
 
+import { createPinia } from "pinia";
+
 import { createRouter, createWebHistory } from "vue-router";
 import { routes } from "vue-router/auto-routes";
+
 import { useTitle } from "@vueuse/core";
 
 import { StoryblokVue, apiPlugin } from "@storyblok/vue";
+
 import MasonryWall from "@yeger/vue-masonry-wall";
 
 
+const pinia = createPinia();
 
 const router = createRouter({
   history: createWebHistory(),
@@ -28,7 +33,9 @@ router.beforeEach((to, from) => {
 
 const app = createApp(App)
 
-app.use(MasonryWall);
+app.use(MasonryWall)
+app.use(pinia)
+app.use(router)
 
 app.use(StoryblokVue, {
   accessToken: import.meta.env.VITE_STORYBLOK_PREVIEW_TOKEN,
@@ -36,5 +43,4 @@ app.use(StoryblokVue, {
   use: [apiPlugin],
 });
 
-app.use(router)
 app.mount('#app')

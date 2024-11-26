@@ -19,6 +19,7 @@ declare module 'vue-router/auto-routes' {
    */
   export interface RouteNamedMap {
     'Eve Koskie': RouteRecordInfo<'Eve Koskie', '/', Record<never, never>, Record<never, never>>,
+    '/[...catchall]': RouteRecordInfo<'/[...catchall]', '/:catchall(.*)', { catchall: ParamValue<true> }, { catchall: ParamValue<false> }>,
     'About': RouteRecordInfo<'About', '/about', Record<never, never>, Record<never, never>>,
     'Portfolio': RouteRecordInfo<'Portfolio', '/portfolio', Record<never, never>, Record<never, never>>,
     'Shop': RouteRecordInfo<'Shop', '/shop', Record<never, never>, Record<never, never>>,
