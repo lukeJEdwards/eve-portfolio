@@ -1,8 +1,5 @@
 <script setup lang="ts">
 import Star from "@/components/icons/StarIcon.vue"
-definePage({
-    name: 'About'
-})
 </script>
 
 
