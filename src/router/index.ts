@@ -19,17 +19,30 @@ const routes = [
     name: "about",
   },
   {
-    path: "/portfolio/:category",
-    component: () => import("@/routes/portfolio.vue"),
-    name: "Portfolio",
+    path: "/portfolio",
+    children: [
+      {
+        path: "",
+        component: () => import("@/routes/portfolio/index.vue"),
+        name: "Portfolio",
+      },
+      {
+        path: ":category",
+        component: () => import("@/routes/portfolio/[category].vue"),
+      },
+    ],
+  },
+  {
+    path: "/project/:slug",
+    component: () => import("@/routes/project.vue"),
   },
   {
     path: "/events",
-    name: "Events",
     children: [
       {
         path: "",
         component: () => import("@/routes/events/index.vue"),
+        name: "Events",
       },
       {
         path: ":slug",

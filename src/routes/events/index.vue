@@ -1,13 +1,9 @@
 <script setup lang="ts">
 import { useImageBuilder } from '@/composables/useImageBuilder';
-import { useSanityQuery } from '@/composables/useSanityQuery';
-import type { Event } from '@/types/sanity.types';
+import { useEventsStore } from '@/store/useEventsStore';
+import { storeToRefs } from 'pinia';
 
-
-const query = `*[
-  _type=="event"
-]`
-const events = await useSanityQuery<Event[]>(query)
+const { state: events } = storeToRefs(useEventsStore())
 
 </script>
 
