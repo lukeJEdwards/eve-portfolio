@@ -16,10 +16,14 @@ export const useAssetsStore = defineStore("Assets", () => {
         ]`;
 
     const { state, isReady, isLoading } = useAsyncState(
-      client.fetch<(Portfolio_asset | Project)[]>(query).then(r => r.sort((a,b) => {
-        const date_a = new Date(a.meta_data?.created)
-        const date_b = new Date(b.meta_data?.created)
-        return date_a - date_b
+      client.fetch<(Portfolio_asset | Project)[]>(query).then(r => r.sort((a, b) => {
+        if(a.meta_data?.created && b.meta_data?.created){
+          const date_a = new Date(a.meta_data?.created)
+          const date_b = new Date(b.meta_data?.created)
+          return date_a.valueOf() - date_b.valueOf()
+        }else{
+          return 0
+        }
       }).reverse()),
       []
     );
