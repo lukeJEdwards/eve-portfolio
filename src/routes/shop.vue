@@ -1,13 +1,21 @@
 <script setup lang="ts">
-import CommingSoon from "@/assets/ComingSoon.svg"
+import { client } from "@/client"
+import type { Website_asset } from "@/types/sanity.types"
 
-definePage({
-    name:'Shop'
-})
+import imageUrlBuilder from '@sanity/image-url'
+
+const builder = imageUrlBuilder(client)
+
+const query = `*[
+  _type=="website_asset" 
+  && name=="Coming Soon"
+][0]`
+
+const data = await client.fetch<Website_asset>(query)
 </script>
 
 <template>
     <div class="flex flex-grow justify-center items-center">
-        <CommingSoon class="w-6/12 md:w-3/12" />
+        <img :src="builder.image(data.asset?.image).url()" class="w-6/12 md:w-3/12" />
     </div>
 </template>

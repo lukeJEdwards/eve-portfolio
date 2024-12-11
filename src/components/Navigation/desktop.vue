@@ -21,7 +21,7 @@ import About from "@/assets/navButtons/About.svg"
                 </RouterLink>
             </li>
             <li>
-                <RouterLink to="/portfolio">
+                <RouterLink to="/portfolio/all">
                     <Portfolio />
                 </RouterLink>
             </li>

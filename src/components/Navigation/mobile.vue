@@ -25,7 +25,7 @@ const isOpen = ref(false);
             <RouterLink to="/shop" @click="isOpen = !isOpen">
                 <Shop class="mx-auto" />
             </RouterLink>
-            <RouterLink to="/portfolio" @click="isOpen = !isOpen">
+            <RouterLink to="/portfolio/all" @click="isOpen = !isOpen">
                 <Portfolio class="mx-auto" />
             </RouterLink>
             <a href="https://www.instagram.com/eve.dreamz/" target="_blank" @click="isOpen = !isOpen">

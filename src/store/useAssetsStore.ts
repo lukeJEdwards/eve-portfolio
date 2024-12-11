@@ -1,34 +1,28 @@
 import { defineStore } from "pinia";
-import { useStoryblok } from "@storyblok/vue";
-import { reactive, ref, type Reactive } from "vue";
+import { useAsyncState } from "@vueuse/core";
+
+import { client } from "@/client";
+
+
+import type { Portfolio_asset, Project } from "@/types/sanity.types";
+
+
 
 export const useAssetsStore = defineStore("Assets", () => {
 
-    const categories: Reactive<{[index:string]: Array<{}>}> = reactive({})
-    const isLoading = ref(true)
+    const query = `*[
+            _type=="portfolio_asset"
+            || _type == "project"
+        ]`;
 
+    const { state, isReady, isLoading } = useAsyncState(
+      client.fetch<(Portfolio_asset | Project)[]>(query).then(r => r.sort((a,b) => {
+        const date_a = new Date(a.meta_data?.created)
+        const date_b = new Date(b.meta_data?.created)
+        return date_a - date_b
+      }).reverse()),
+      []
+    );
 
-    async function getCategories(){
-        const story = await useStoryblok("all-categories", { version: "draft"});
-        return story.value.content.Reference
-    }
-
-    async function getCategoryContent(uuid: string){
-        const story = await useStoryblok(uuid, {
-          version: "draft",
-          find_by:"uuid"
-        });
-        return story.value
-    }
-
-    async function initialize(){
-        const allCategories = await getCategories()
-        allCategories.forEach(async (uuid: string) => {
-            const category = await getCategoryContent(uuid)
-            categories[category.name] = category.content.Assets;
-        });
-        isLoading.value = false;
-    }
-
-    return { initialize, categories,  isLoading };
+    return { state, isLoading, isReady };
 });
