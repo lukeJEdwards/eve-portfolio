@@ -40,7 +40,7 @@ const colWidth = computed(() => {
         </div>
         <ul class="flex flex-col gap-4 py-8 items-center">
             <li v-for="image in project.project_assets" class="rounded w-1/4">
-                <img :src="builder.image(image.asset?._ref)" />
+                <img :src="builder.image(image.asset?._ref).url()" />
             </li>
         </ul>
     </div>

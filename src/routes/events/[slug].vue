@@ -24,7 +24,7 @@ const event = computed(() => get_event(route.params.slug))
     <div class="flex flex-col px-32 items-center">
         <ul class="flex gap-4 py-8 justify-center">
             <li v-for="image in event.project_assets" class="rounded max-w-[300px]">
-                <img :src="builder.image(image.asset?._ref)" />
+                <img :src="builder.image(image.asset?._ref).url()" />
             </li>
         </ul>
         <div class="flex justify-center w-[616px]">
