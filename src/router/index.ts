@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
 import { useTitle } from "@vueuse/core";
+import path from "path";
 
 const routes = [
   {
@@ -23,9 +24,23 @@ const routes = [
     name: "Portfolio",
   },
   {
+    path: "/events",
+    name: "Events",
+    children: [
+      {
+        path: "",
+        component: () => import("@/routes/events/index.vue"),
+      },
+      {
+        path: ":slug",
+        component: () => import("@/routes/events/[slug].vue"),
+      },
+    ],
+  },
+  {
     path: "/:pathMatch(.*)*",
     component: () => import("@/routes/404.vue"),
-    name:"404"
+    name: "404",
   },
 ];
 

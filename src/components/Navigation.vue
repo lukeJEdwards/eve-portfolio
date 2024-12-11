@@ -2,13 +2,13 @@
 import desktop from "./Navigation/desktop.vue";
 import mobile from "./Navigation/mobile.vue";
 
-import { UseWindowSize } from '@vueuse/components'
+import { useWindowSize } from "@vueuse/core"
+
+const { width } = useWindowSize()
 </script>
 
 
 <template>
-    <UseWindowSize v-slot="{ width }">
-        <desktop v-if="width > 768" />
-        <mobile v-else />
-    </UseWindowSize>
+    <desktop v-if="width > 768" />
+    <mobile v-else />
 </template>
