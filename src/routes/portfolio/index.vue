@@ -30,7 +30,7 @@ const colWidth = computed(() => {
     <masonry-wall :items="images" :gap="16" :column-width="colWidth" class="pt-32 xl:px-32 lg:px-12 px-8 pb-8">
         <template #default="{ item }">
             <div v-if="item._type == 'portfolio_asset'" class="relative hover:*:opacity-100">
-                <img :src="useImageBuilder(item, 707)" class="rounded-xl" :class="`w-[${colWidth}]`" />
+                <img :src="useImageBuilder(item.asset?.image?.asset, 707)" class="rounded-xl" :class="`w-[${colWidth}]`" />
                 <div class="
                     absolute flex justify-center 
                     items-center top-0 left-0 bg-[#F472B699]
@@ -43,7 +43,7 @@ const colWidth = computed(() => {
             </div>
             <RouterLink v-else :to="`/project/${item.slug?.current}`">
                 <div class="relative hover:*:opacity-100">
-                    <img :src="useImageBuilder(item, 707)" class="rounded-xl" :class="`w-[${colWidth}]`" />
+                    <img :src="useImageBuilder(item.thumbnail?.asset, 707)" class="rounded-xl" :class="`w-[${colWidth}]`" />
                     <div class="
                     absolute flex justify-center 
                     items-center top-0 left-0 bg-[#F472B699]

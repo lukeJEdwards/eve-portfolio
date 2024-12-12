@@ -28,11 +28,11 @@ export const useAssetsStore = defineStore("Assets", () => {
       []
     );
 
-    function get_category(category:string){
+    function get_category(category:string|string[]){
       return state.value.filter( a => a.category == category)
     }
 
-    function get_project(slug:string){
+    function get_project(slug:string|string[]){
       return state.value.filter(a => a._type == "project").filter(p => p.slug?.current == slug)[0]
     }
 

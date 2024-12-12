@@ -13,7 +13,7 @@ const { state: events } = storeToRefs(useEventsStore())
         <ul class="flex gap-8">
             <li v-for="event in events" class="w-[250px]">
                 <RouterLink :to="`/events/${event.slug?.current}`">
-                    <img :src="useImageBuilder(event)" class="rounded-xl" />
+                    <img :src="useImageBuilder(event.thumbnail?.asset)" class="rounded-xl" />
                 </RouterLink>
             </li>
         </ul>

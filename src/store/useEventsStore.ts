@@ -14,7 +14,7 @@ export const useEventsStore = defineStore("events", () => {
         useSanityQuery<Event[]>(query), []
     )
 
-    function get_event(event_slug:string): Event{
+    function get_event(event_slug:string|string[]): Event{
         return state.value.filter(e => e.slug?.current == event_slug)[0]
     }
 

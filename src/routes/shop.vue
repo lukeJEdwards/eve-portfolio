@@ -15,6 +15,6 @@ const image = await useSanityQuery<Website_asset>(query)
 
 <template>
     <div class="flex flex-grow justify-center items-center">
-        <img :src="useImageBuilder(image)" class="w-6/12 md:w-3/12" />
+        <img :src="useImageBuilder(image.asset?.image?.asset)" class="w-6/12 md:w-3/12" />
     </div>
 </template>

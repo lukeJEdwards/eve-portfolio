@@ -38,10 +38,10 @@ const colWidth = computed(() =>{
 <template>
     <masonry-wall :items="images" :gap="16" :column-width="colWidth" class="pt-32 xl:px-32 lg:px-12 px-8">
         <template #default="{ item }">
-            <img v-if="item._type == 'portfolio_asset' " :src="useImageBuilder(item, 707)" class="rounded-xl"
+            <img v-if="item._type == 'portfolio_asset' " :src="useImageBuilder(item.asset?.image?.asset, 707)" class="rounded-xl"
                 :class="`w-[${colWidth}]`" />
             <RouterLink v-else :to="`/${item.slug?.current}`">
-                <img :src="useImageBuilder(item, 707)" class="rounded-xl hover:scale-110" :class="`w-[${colWidth}]`" />
+                <img :src="useImageBuilder(item.thumbnail?.asset, 707)" class="rounded-xl hover:scale-110" :class="`w-[${colWidth}]`" />
             </RouterLink>
         </template>
     </masonry-wall>

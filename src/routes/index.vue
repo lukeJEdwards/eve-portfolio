@@ -20,7 +20,7 @@ const landing_GIF = computed(() => data.filter(i => i.name == "landing_GIF")[0])
 
 <template>
     <div class="w-full flex-grow flex flex-col items-center justify-center">
-        <img :src="useImageBuilder(landing_Title)" class="w-[349px]" />
-        <img :src="useImageBuilder(landing_GIF)" class="w-[349px]" />
+        <img :src="useImageBuilder(landing_Title.asset?.image?.asset)" class="w-[349px]" />
+        <img :src="useImageBuilder(landing_GIF.asset?.image?.asset)" class="w-[349px]" />
     </div>
 </template>

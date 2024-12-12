@@ -101,7 +101,7 @@ export type Event = {
     crop?: SanityImageCrop
     _type: 'image'
   }
-  content?: Array<{
+  content: Array<{
     children?: Array<{
       marks?: Array<string>
       text?: string
@@ -162,7 +162,7 @@ export type Project = {
     | 'editoral'
     | 'personal'
     | 'publishing'
-  content?: Array<{
+  content: Array<{
     children?: Array<{
       marks?: Array<string>
       text?: string
