@@ -55,6 +55,11 @@ const isOpen = ref(false);
                         </RouterLink>
                     </li>
                     <li>
+                        <RouterLink to="/portfolio/personal" @click="isOpen = !isOpen">
+                            Personal
+                        </RouterLink>
+                    </li>
+                    <li>
                         <RouterLink to="/portfolio/doodles" @click="isOpen = !isOpen">
                             Doodles
                         </RouterLink>

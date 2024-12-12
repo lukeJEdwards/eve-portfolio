@@ -18,7 +18,7 @@ const project = computed(() => get_project(route.params.slug))
         <h1 class="text-2xl font-bold text-white mb-8">
             {{ project.title }}
         </h1>
-        <div class="w-5/6">
+        <div class="w-5/6 text-center">
             <PortableText :value="project.content" />
         </div>
         <ul class="flex flex-col gap-4 py-8 items-center">

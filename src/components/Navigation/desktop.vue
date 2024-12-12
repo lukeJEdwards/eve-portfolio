@@ -58,6 +58,11 @@ const isHovered = useElementHover(dropDown)
                             </RouterLink>
                         </li>
                         <li class="hover:bg-[#375625] rounded text-center w-full py-2">
+                            <RouterLink to="/portfolio/personal" class="w-full py-2">
+                                Personal
+                            </RouterLink>
+                        </li>
+                        <li class="hover:bg-[#375625] rounded text-center w-full py-2">
                             <RouterLink to="/portfolio/doodles" class="w-full py-2">
                                 Doodles
                             </RouterLink>
