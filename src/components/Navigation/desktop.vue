@@ -22,7 +22,7 @@ const isHovered = useElementHover(dropDown)
         <ul class="flex mr-auto lg:gap-12 md:gap-8">
             <li>
                 <RouterLink to="/">
-                    <Home />
+                    <Home class="w-full"/>
                 </RouterLink>
             </li>
             <li>

@@ -1,5 +1,10 @@
 <script setup lang="ts">
 import Star from "@/components/icons/StarIcon.vue"
+import { useClipboard } from '@vueuse/core'
+import { ref } from "vue"
+
+const source = ref()
+const { copy, copied } = useClipboard()
 </script>
 
 
@@ -11,6 +16,14 @@ import Star from "@/components/icons/StarIcon.vue"
             <Star class="absolute bottom-0 left-0 rotate-[15deg]" />
             <Star class="absolute bottom-0 right-0 rotate-[55deg]" />
             <img src="https://a.storyblok.com/f/297110/4480x6720/493feeb7c5/headshot.JPG/m/378x0" class="rounded-lg" />
+            <p ref="source"
+                class="text-neutral-700 py-2 my-2 rounded-lg text-center font-bold hover:cursor-pointer hover:bg-[#74a769]"
+                @click="copy(source.innerHTML)">
+                evekoskie@gmail.com
+            </p>
+            <p v-if="copied" class="absolute left-1/2 transform -translate-x-1/2">
+                Copied
+            </p>
         </div>
         <p class="text-white p-16 sm:w-[479px] lg:text-2xl">
             I'm Eve! I'm from California and I am currently based in London, UK. I'm a third year illustration student

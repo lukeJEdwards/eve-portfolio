@@ -12,6 +12,8 @@ import { computed } from 'vue';
 const { state: images } = storeToRefs(useAssetsStore())
 const { width } = useWindowSize()
 
+const filterdItems = computed(() =>images.value.filter(image => image.category != "crochet"))
+
 const colWidth = computed(() => {
     if (width.value > 1536) {
         return ((width.value - 256) - 48) / 4
@@ -27,9 +29,9 @@ const colWidth = computed(() => {
 </script>
 
 <template>
-    <masonry-wall :items="images" :gap="16" :column-width="colWidth" class="pt-32 xl:px-32 lg:px-12 px-8 pb-8">
+    <masonry-wall :items="filterdItems" :gap="16" :column-width="colWidth" class="pt-32 xl:px-32 lg:px-12 px-8 pb-8">
         <template #default="{ item }">
-            <div v-if="item._type == 'portfolio_asset'" class="relative hover:*:opacity-100">
+            <div v-if="item._type == 'portfolio_asset'" class="relative">
                 <img :src="useImageBuilder(item.asset?.image?.asset, 707)" class="rounded-xl" :class="`w-[${colWidth}]`" />
                 <div class="
                     absolute flex justify-center 

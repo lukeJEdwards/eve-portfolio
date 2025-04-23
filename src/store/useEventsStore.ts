@@ -2,7 +2,7 @@ import { defineStore } from "pinia";
 import { useAsyncState } from "@vueuse/core";
 import { useSanityQuery } from "@/composables/useSanityQuery";
 
-import type { Event, Slug } from "@/types/sanity.types";
+import type { Event } from "@/types/sanity.types";
 
 
 export const useEventsStore = defineStore("events", () => {

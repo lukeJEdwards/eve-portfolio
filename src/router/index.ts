@@ -1,6 +1,5 @@
 import { createRouter, createWebHistory } from "vue-router";
 import { useTitle } from "@vueuse/core";
-import path from "path";
 
 const routes = [
   {
