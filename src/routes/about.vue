@@ -25,16 +25,17 @@ const { copy, copied } = useClipboard()
                 Copied
             </p>
         </div>
-        <p class="text-white p-16 sm:w-[479px] lg:text-2xl">
-            I'm Eve! I'm from California and I am currently based in London, UK. I'm a third year illustration student
-            and president of my crochet society at uni. I'm super inspired by emotions, relationships, traveling, and
-            drag queens. I love cats, reading, reality tv, and long skirts.
+        <p class="text-white p-16 sm:w-[479px] lg:text-xl">
+            Eve Koskie is a Californian born, London based illustrator with a passion for storytelling through her
+            unique visual language. She finds inspiration in drag queens, nature, and most of all, her own life
+            experiences. Human connection is the driving force behind Eve’s practice, as each illustration brings her a
+            better understanding of the emotions we all encounter in our lives.
             <br />
             <br />
-            My illustration practice is mostly digital but you'll see some doodles, animation, and maybe even some water
-            colour here and there. I also love to share my crochet work! I recently completed a course to do nails so l
-            will hopefully be sharing some nails soon as well :) thank you for following along, I really love sharing my
-            work with you!
+            The work Eve creates is often in the form of comics, editorial illustration, animation, and physical
+            products. This diverse skillset has her led to sell her work at art markets, teach workshops, and plan
+            community events. As an illustrator, she brings a fresh perspective to the industry and an excitement for
+            collaboration.
         </p>
     </div>
 </template>
