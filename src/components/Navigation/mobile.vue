@@ -30,10 +30,10 @@ const isOpen = ref(false);
                 </RouterLink>
             </li>
             <li>
-                <RouterLink to="/portfolio/all" @click="isOpen = !isOpen">
+                <RouterLink to="/portfolio" @click="isOpen = !isOpen">
                     <Portfolio class="mx-auto" />
                 </RouterLink>
-                <ul class="flex flex-col items-center pt-4 font-bold text-white gap-4 text-lg">
+                <!-- <ul class="flex flex-col items-center pt-4 font-bold text-white gap-4 text-lg">
                     <li>
                         <RouterLink to="/portfolio/editorial" @click="isOpen = !isOpen">
                             Editorial
@@ -66,10 +66,10 @@ const isOpen = ref(false);
                     </li>
                     <li>
                         <RouterLink to="/portfolio/chrochet" @click="isOpen = !isOpen">
-                            Chrochet
+                            Crochet
                         </RouterLink>
                     </li>
-                </ul>
+                </ul> -->
             </li>
             <li>
                 <a href="https://www.instagram.com/eve.dreamz/" target="_blank" @click="isOpen = !isOpen">
